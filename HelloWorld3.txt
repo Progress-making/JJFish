@@ -1,8 +1,44 @@
 本地仓库闭环练手！
+Git配置：
+用户名和邮箱的配置
+git config --global user.name "名字"
+git config --global user.email "邮箱"
+
+gitk&  //进入gitk图形化界面
+
+乱码问题解决：
+当打开gitk图形界面时，文件中的中文部分乱码，这是因为编码格式的问题。
+将全局配置为UTF-8编码：
+git config --global gui.encoding utf-8
+并且要求集成开发环境工具的编码也设置为utf-8。
+
+.gitignore //用来记录那些不纳入git版本管理的文件。
+
+
+HEAD 表示当前活跃分支的游标。形象记忆：你现在在哪儿，HEAD就指向哪儿，所有Git才知道你在那儿!
 1.git init //将一个文件夹初始化为一个本地仓库的工作区，即生成一个.git的隐藏文件夹，该文件夹即本地仓库。
 2.git status //查看当前工作区是否有任何变更文件。有，则显示为红色标记的相关条目。
-3.git add 指定文件  //将指定的变更文件添加到暂存区（位于本地仓库中）
+3.git add <filename>  //将指定的变更文件添加到暂存区（位于本地仓库中）
   git add .  //将所有的变更文件添加到暂存区（此时可能存在某些无用的附带文件，需要手动忽略或者关联一个专门的带有忽略格式的文件）
-4.git commit -m"信息" //将处于暂存区的文件提交到本地仓库持久化。
+4.git commit -m"<message>" //将处于暂存区的文件提交到本地仓库持久化。
+  git commit --amend //修改最后一次提交
 5.git log //记录提交过程的日志，每个单独的提交都有对应的唯一序列号（哈希码）
-6.git reset 序列号 //回退到指定的某个提交状态。
+  git log -p <file> //查看指定文件的提交历史
+  git blame <file> //以列表的形式查看指定文件的提交历史
+6.git reflog //查看命令历史，确定自己执行过的命令
+7.git reset <commit> <filename> //回退到指定的某个提交状态。由版本库回退到暂存区
+  git reset HEAD .//所有文件回退到上次提交的状态
+  git reset HEAD <filename> //指定文件回退到上次提交状态
+  git reset --soft <commit> //撤销指定提交之后所有的提交，返回到暂存区并保留工作区变更的内容。可再次执行一次综合性提交。相当于合成多次提交。
+  git reset --hard <commit> //工作区回到指定提交的某个历史版本。
+  git reset --hard HEAD //撤销工作区中所有未提交文件的修改内容，即工作区回到上次提交的版本。
+8.git diff --cached //查看暂存区与版本库的差异
+9.git diff //查看工作区与暂存区的差异
+10.git checkout <filename> //指定文件由暂存区回退到工作区
+  git checkout . //所有文件由暂存区回退到工作区
+11.git checkout HEAD <filename> //撤销指定的未提交文件的修改内容
+   git checkout HEAD . //撤销所有的未提交文件的修改内容
+12.git revert <commit> //撤销指定的提交
+13.rm <filename> // 在工作区放弃新增的指定文件
+   rm dir -rf //在工作区放弃新增的指定文件夹及其子文件目录结构
+14.git clean -xdf //在工作区放弃新增的所有文件夹/文件
