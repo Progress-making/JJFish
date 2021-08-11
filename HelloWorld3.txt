@@ -42,3 +42,5 @@ HEAD 表示当前活跃分支的游标。形象记忆：你现在在哪儿，HEA
 13.rm <filename> // 在工作区放弃新增的指定文件
    rm dir -rf //在工作区放弃新增的指定文件夹及其子文件目录结构
 14.git clean -xdf //在工作区放弃新增的所有文件夹/文件
+15.git remote -v //查看远程仓库
+16.git push [-u] <repository name> <branch name> //将本地仓库推送给指定的远程仓库的某个分支
