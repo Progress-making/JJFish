@@ -57,3 +57,6 @@ HEAD 表示当前活跃分支的游标。形象记忆：你现在在哪儿，HEA
 26.git stash drop //清除stash栈
 27.git stash pop //恢复缓存栈中的任务并同时清除缓存栈
 28.git cherry-pick <commit> //复制一个特定的提交到当前分支
+
+29.git log --graph //日志可看到分支合并图
+
