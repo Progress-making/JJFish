@@ -44,3 +44,9 @@ HEAD 表示当前活跃分支的游标。形象记忆：你现在在哪儿，HEA
 14.git clean -xdf //在工作区放弃新增的所有文件夹/文件
 15.git remote -v //查看远程仓库
 16.git push [-u] <repository name> <branch name> //将本地仓库推送给指定的远程仓库的某个分支
+17.git branch //查看所有分支
+18.git branch <name> //创建分支
+19.git checkout <name> | git switch <name> //切换分支
+20.git checkout -b <name> | git switch -c <name> //创建+切换分支
+21.git merge <name> //合并指定分支到当前分支上
+22.git branch -d <name>  //删除指定分支
