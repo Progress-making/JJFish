@@ -50,3 +50,5 @@ HEAD 表示当前活跃分支的游标。形象记忆：你现在在哪儿，HEA
 20.git checkout -b <name> | git switch -c <name> //创建+切换分支
 21.git merge <name> //合并指定分支到当前分支上
 22.git branch -d <name>  //删除指定分支
+
+23.git log --graph //日志可看到分支合并图
