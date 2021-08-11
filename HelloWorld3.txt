@@ -49,4 +49,11 @@ HEAD 表示当前活跃分支的游标。形象记忆：你现在在哪儿，HEA
 19.git checkout <name> | git switch <name> //切换分支
 20.git checkout -b <name> | git switch -c <name> //创建+切换分支
 21.git merge <name> //合并指定分支到当前分支上
+   git merge --no-ff -m"<msg>" <name> //采用非Fast forward模式合并
 22.git branch -d <name>  //删除指定分支
+23.git stash //隐藏当前工作区到一个缓存栈中，待以后恢复现场后继续工作
+24.git stash list //查看缓存栈（有被缓存的任务才会出现对应信息）
+25.git stash apply //恢复缓存栈中的任务到当前工作区，但是stash栈还存在
+26.git stash drop //清除stash栈
+27.git stash pop //恢复缓存栈中的任务并同时清除缓存栈
+28.git cherry-pick <commit> //复制一个特定的提交到当前分支
